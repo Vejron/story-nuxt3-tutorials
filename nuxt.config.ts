@@ -14,16 +14,16 @@ export default defineNuxtConfig({
       },
     },
   },
-  modules: ["@unocss/nuxt"],
+  modules: ["@unocss/nuxt", "@vueuse/nuxt"],
   buildModules: [
-    ["@storyblok/nuxt", { 
-      accessToken: process.env.NUXT_PUBLIC_STORYBLOK_API_TOKEN,
-      bridge: process.env.NODE_ENV !== "production",
-      https: true
-    }],
-    // ...
+    [
+      "@storyblok/nuxt",
+      {
+        accessToken: process.env.NUXT_PUBLIC_STORYBLOK_API_TOKEN,
+        bridge: process.env.NODE_ENV !== "production",
+        https: true,
+      },
+    ],
   ],
-  css: [
-    '@unocss/reset/tailwind.css'
-  ]
+  css: ["@unocss/reset/tailwind.css"],
 });
