@@ -14,6 +14,9 @@ export default defineNuxtConfig({
       },
     },
   },
+  build: {
+    transpile: ["@marvr/storyblok-rich-text-vue-renderer"],
+  },
   modules: ["@unocss/nuxt", "@vueuse/nuxt"],
   buildModules: [
     [
@@ -26,4 +29,25 @@ export default defineNuxtConfig({
     ],
   ],
   css: ["@unocss/reset/tailwind.css"],
+  unocss: {
+    typography: {
+      cssExtend: {
+        code: {
+          color: "#8b5cf6",
+        },
+        '.prose pre': {
+
+          border: "2px solid red",
+          "background-color": "black",
+          color: "white"
+        },
+        "a:hover": {
+          color: "#f43f5e",
+        },
+        "a:visited": {
+          color: "#14b8a6",
+        },
+      },
+    },
+  },
 });
