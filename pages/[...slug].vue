@@ -1,5 +1,5 @@
 <template>
-  <StoryblokComponent v-if="story" :blok="story.content" :story="story" />
+  <Component :is="story.content.component" :blok="story.content" :story="story" />
 </template>
 
 <script lang="ts" setup>
