@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-drop flex flex-col">
-    <div class="sm:p-8 p-4 sm:my-10 mx-auto bg-white">
+  <div class="bg-drop sm:py-10">
+    <div class="sm:p-8 p-4 bg-white mx-auto" style="max-width: fit-content">
       <article
-        class="text-base prose prose-slate lg:text-lg mx-auto"
+        class="text-sm sm:text-base lg:text-lg max-w-[75ch] prose prose-slate"
         v-editable="blok"
       >
         <h1 class="not-prose font-bold text-3xl sm:text-5xl lg:text-6xl">

@@ -35,11 +35,10 @@ export default defineNuxtConfig({
         code: {
           color: "#8b5cf6",
         },
-        '.prose pre': {
-
+        ".prose pre": {
           border: "2px solid red",
           "background-color": "black",
-          color: "white"
+          color: "white",
         },
         "a:hover": {
           color: "#f43f5e",
