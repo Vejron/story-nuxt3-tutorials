@@ -4,6 +4,7 @@ import {
   plugin,
 } from "@marvr/storyblok-rich-text-vue-renderer";
 import StoryImage from "~/components/StoryImage.vue";
+import VideoTube from "~/storyblok/VideoTube.vue";
 import { NodeTypes } from "@marvr/storyblok-rich-text-types";
 
 export default defineNuxtPlugin(({ vueApp }) => {
@@ -15,8 +16,13 @@ export default defineNuxtPlugin(({ vueApp }) => {
             image: { filename: attrs.src, alt: attrs.alt },
             params: "0x500",
           }),
+        components: {
+          "video-tube": ({ fields }) =>
+            h(VideoTube, {
+              blok: { youtube_video_id: fields.youtube_video_id },
+            }),
+        },
       }),
     })
   );
 });
-
