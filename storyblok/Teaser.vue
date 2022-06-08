@@ -1,6 +1,9 @@
 <template>
-  <div v-editable="blok" class="my-8 p-8 bg-blue-500 rounded-lg text-center">
-    <h2 class="text-white text-4xl font-bold">{{ blok.headline }}</h2>
+  <div v-editable="blok" class="pt-12 px-4 sm:text-center max-w-6xl mx-auto">
+    <Component :is="blok.level ?? 'h3'" class="text-4xl sm:text-6xl font-black">{{
+      blok.heading
+    }}</Component>
+    <p class="max-w-xl my-6 mx-auto ">{{ blok.tagline }}</p>
   </div>
 </template>
 

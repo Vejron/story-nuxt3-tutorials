@@ -1,5 +1,11 @@
 <template>
-  <img :src="src" :alt="image?.alt" :width="width" :height="height" />
+  <img
+    v-if="props.image"
+    :src="src"
+    :alt="image?.alt"
+    :width="width"
+    :height="height"
+  />
 </template>
 
 <script setup lang="ts">
@@ -14,9 +20,18 @@ const props = defineProps({
     default: "",
   },
 });
-const src = computed(() => props.image?.filename + "/m/" + props.params);
+const src = computed(() => {
+  if (getExtension(props.image?.filename) !== "svg") {
+    return props.image?.filename + "/m/" + props.params;
+  }
+  return props.image?.filename;
+});
 const width = computed(() => props.image?.filename.split("/")[5].split("x")[0]);
 const height = computed(
   () => props.image?.filename.split("/")[5].split("x")[1]
 );
+
+const getExtension = (path: string) => {
+  return path.substring(path.lastIndexOf(".") + 1, path.length) || path;
+};
 </script>

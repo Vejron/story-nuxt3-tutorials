@@ -7,7 +7,7 @@
       class="h-56 sm:h-72 relative flex flex-col justify-end overflow-hidden"
     >
       <StoryImage
-          class="absolute transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 w-full h-full object-cover object-top"
+          class="absolute transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-3 w-full h-full object-cover object-top"
           :image="blok.content.image"
           params="400x0"
         />
