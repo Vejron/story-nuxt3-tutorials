@@ -3,10 +3,17 @@
     :is="is"
     :to="href"
     v-editable="blok"
-    class="p-4 flex items-center sm:flex-col"
+    class="p-4 group flex items-center sm:flex-col"
   >
-    <StoryImage class="h-20 mr-4 sm:mr-0" :image="blok.image" />
-    <div class="flex flex-col sm:text-center">
+    <StoryImage
+      class="h-20 w-20 mr-4 sm:mr-0"
+      :class="{ 'group-hover:animate-rubber-band': isLink }"
+      :image="blok.image"
+    />
+    <div
+      :class="{ 'transition duration-300 group-hover:text-green-600': isLink }"
+      class="flex flex-col sm:text-center"
+    >
       <Component :is="blok.level ?? 'h3'" class="text-2xl font-bold">{{
         blok.heading
       }}</Component>
@@ -24,16 +31,20 @@ const props = defineProps({
 });
 
 const is = computed(() => {
-  const link = props.blok.link;
-  if (link?.url || link?.cached_url) {
+  if (isLink) {
     return resolveComponent("NuxtLink");
   }
   return "div";
 });
 
+const isLink = computed(() => {
+  const link = props.blok.link;
+  return link?.url || link?.cached_url;
+});
+
 const href = computed(() => {
   const link = props.blok.link;
-  if (link?.url || link?.cached_url) {
+  if (isLink) {
     return link.linktype === "story" ? `/${link.cached_url}` : link.url;
   }
 });

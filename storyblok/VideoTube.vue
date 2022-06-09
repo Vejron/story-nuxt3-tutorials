@@ -2,7 +2,7 @@
   <div v-editable="blok">
     <iframe
       class="w-full min-h-50 sm:min-h-sm"
-      :src="`https://www.youtube.com/embed/${blok.youtube_video_id}`"
+      :src="`https://www.youtube.com/embed/${blok.youtube_video_id}?enablejsapi=1`"
       title="YouTube video player"
       frameborder="0"
       allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
