@@ -1,12 +1,12 @@
 <template>
-  <div v-editable="blok" class="py-8 xl:py-16 sm:px-6">
+  <div v-editable="blok" class="py-8 xl:py-16 px-4">
     <div class="max-w-6xl mx-auto">
       <h1
-        class="xl:text-5xl text-gray-800 lg:w-9/12 font-extrabold mb-4 text-3xl px-4 sm:px-0"
+        class="xl:text-5xl text-gray-800 lg:w-9/12 font-extrabold mb-4 text-3xl md:text-center md:mx-auto"
       >
         {{ blok.title }}
       </h1>
-      <p class="text-xl text-gray-600 mb-6 lg:w-9/12 px-4 sm:px-0">
+      <p class="text-xl text-gray-600 mb-6 lg:w-9/12 md:text-center md:mx-auto">
         {{ blok.description }}
       </p>
       <ul

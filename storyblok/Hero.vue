@@ -9,18 +9,21 @@
     />
     <div
       class="p-8 absolute inset-0 flex flex-col justify-center items-center text-center text-white"
-      :class="{'bg bg-gradient-to-t from-black/20 via-black/50 to-transparent': blok.overlay}"
+      :class="{
+        'bg bg-gradient-to-t from-black/20 via-black/50 to-transparent':
+          blok.overlay,
+      }"
     >
       <Component
-        class="text-3xl sm:text-5xl font-bold glow"
+        class="text-3xl sm:text-5xl font-bold"
         :is="blok.level ?? 'h1'"
         >{{ blok.heading }}</Component
       >
 
-      <p class="font-light glow px-2 py-1 mt-4 sm:text-xl sm:mt-6">
+      <p class="font-light px-2 py-1 mt-4 sm:text-xl sm:mt-6">
         {{ blok.tagline }}
       </p>
-      <div class="flex gap-8 mt-2 sm:mt-4 sm:text-xl font-bold">
+      <div class="flex justify-center gap-8 mt-2 sm:mt-4 sm:text-xl font-bold">
         <Component v-for="cta in blok.cta" :is="cta.component" :blok="cta">
         </Component>
       </div>

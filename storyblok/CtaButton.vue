@@ -26,7 +26,6 @@ const external = computed(() => !!props.blok.link?.url);
 .fancy {
   border-left: 2px solid #e80e0e;
   border-right: 2px solid #e80e0e;
-  color: #fff;
   position: relative;
   padding: 1em 2em;
   cursor: pointer;

@@ -4,7 +4,7 @@
     :style="style"
     class="px-4"
   >
-    <div :class="{'max-w-4xl mx-auto': blok.full_width}" >
+    <div :class="{'max-w-6xl mx-auto': !blok.full_width}" >
       <Component
         v-for="blok in props.blok.blocks"
         :is="blok.component"
