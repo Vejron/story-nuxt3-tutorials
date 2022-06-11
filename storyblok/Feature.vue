@@ -14,7 +14,7 @@
       :class="{ 'transition duration-300 group-hover:text-green-600': isLink }"
       class="flex flex-col sm:text-center"
     >
-      <Component :is="blok.level ?? 'h3'" class="text-2xl font-bold">{{
+      <Component :is="blok.level ?? 'h3'" class="text-2xl font-bold mb-3 mt-6">{{
         blok.heading
       }}</Component>
       <p class="">{{ blok.paragraph }}</p>
