@@ -5,8 +5,8 @@
     class="relative my-10 flex w-full flex-col sm:flex-row overflow-hidden"
   >
     <div
-      class="w-full min-w-[50%] flex flex-col lg:max-h-lg"
-      :class="[blok.full_width_variant ? 'sm:absolute h-full' : 'sm:w-1/2']"
+      class="w-full min-w-[50%] flex flex-col h-56 sm:h-auto sm:min-h-md"
+      :class="[blok.full_width_variant ? 'sm:absolute sm:h-full' : 'sm:w-1/2']"
     >
       <StoryImage
         class="object-cover h-full"
@@ -18,7 +18,7 @@
     </div>
 
     <div
-      class="flex flex-col justify-center py-8"
+      class="flex flex-col justify-center py-8 sm:min-h-md"
       :class="[blok.left ? 'sm:pr-8' : 'sm:pl-8', blok.full_width_variant ? 'relative sm:px-8 sm:w-2/5 sm:bg-white/60 backdrop-blur-sm' : '']"
     >
       <h2 class="text-3xl sm:text-5xl font-bold text-green-800">

@@ -1,28 +1,24 @@
 <template>
   <div
+    v-editable="blok"
     class="block flex flex-col h-full bg-white rounded-md shadow-lg overflow-hidden"
   >
     <div class="h-56 sm:h-72 relative overflow-hidden">
       <StoryImage
-        class="absolute w-full h-full object-cover object-top"
+        class="absolute w-full h-full object-cover object-center"
         :image="blok.image"
         params="400x0"
       />
     </div>
     <div class="flex flex-col flex-grow">
-      <h3 class="px-4 py-2 my-2 font-semibold text-xl">
-        {{ blok.title }}
-      </h3>
-      <div
-        class="line-clamp mx-4 group-hover:text-red-500 transition-color duration-500"
+      <Component
+        class="px-4 py-2 my-2 font-semibold text-xl"
+        :is="blok.level ?? 'h1'"
+        >{{ blok.heading }}</Component
       >
-        <RichTextRenderer
-          v-if="blok.content?.intro"
-          :document="blok.content?.intro"
-        />
-      </div>
+      <p class="line-clamp px-4" v-if="blok.paragraph">{{ blok.paragraph }}</p>
       <div class="flex-grow"></div>
-      <div class="p-4 flex w-full gap-8">
+      <div class="p-4 flex w-full font-semibold gap-8">
         <Component v-for="cta in blok.cta" :is="cta.component" :blok="cta" />
       </div>
     </div>
@@ -30,7 +26,6 @@
 </template>
 
 <script setup lang="ts">
-import { RichTextRenderer } from "@marvr/storyblok-rich-text-vue-renderer";
 
 const props = defineProps({
   blok: {
@@ -38,7 +33,6 @@ const props = defineProps({
     required: true,
   },
 });
-
 </script>
 
 <style scoped>
