@@ -143,7 +143,7 @@
       "name": "cta-button",
       "display_name": null,
       "created_at": "2022-06-01T07:41:07.518Z",
-      "updated_at": "2022-06-01T07:44:24.482Z",
+      "updated_at": "2022-06-13T09:45:13.356Z",
       "id": 2504784,
       "schema": {
         "text": {
@@ -153,6 +153,9 @@
         "link": {
           "type": "multilink",
           "pos": 1
+        },
+        "fancy": {
+          "type": "boolean"
         }
       },
       "image": null,
@@ -259,7 +262,7 @@
       "name": "form-builder",
       "display_name": null,
       "created_at": "2022-06-12T09:25:48.116Z",
-      "updated_at": "2022-06-12T10:54:23.138Z",
+      "updated_at": "2022-06-13T09:05:40.234Z",
       "id": 2542467,
       "schema": {
         "description": {
@@ -270,6 +273,28 @@
         },
         "submit_label": {
           "type": "text"
+        },
+        "validation_visibility": {
+          "type": "option",
+          "options": [
+            {
+              "name": "Blur",
+              "value": "blur"
+            },
+            {
+              "value": "live",
+              "name": "Live"
+            },
+            {
+              "value": "dirty",
+              "name": "Dirty"
+            },
+            {
+              "value": "submit",
+              "name": "Submit"
+            }
+          ],
+          "default_value": "live"
         }
       },
       "image": null,
@@ -285,37 +310,10 @@
       "icon": null
     },
     {
-      "name": "form-fieldset",
-      "display_name": null,
-      "created_at": "2022-06-12T20:23:26.774Z",
-      "updated_at": "2022-06-12T20:25:25.054Z",
-      "id": 2543431,
-      "schema": {
-        "label": {
-          "type": "text",
-          "default_value": "fieldset label"
-        },
-        "options": {
-          "type": "text"
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": false,
-      "preview_tmpl": null,
-      "is_nestable": true,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "form-fieldset",
-      "component_group_uuid": null,
-      "color": "#00b3b0",
-      "icon": null
-    },
-    {
       "name": "form-input",
       "display_name": null,
       "created_at": "2022-06-12T09:27:41.038Z",
-      "updated_at": "2022-06-12T20:15:37.290Z",
+      "updated_at": "2022-06-13T09:34:15.248Z",
       "id": 2542468,
       "schema": {
         "label": {
@@ -389,27 +387,6 @@
         "validation": {
           "type": "text"
         },
-        "validation_visibility": {
-          "type": "option",
-          "options": [
-            {
-              "name": "Blur",
-              "value": "blur"
-            },
-            {
-              "value": "live",
-              "name": "Live"
-            },
-            {
-              "value": "dirty",
-              "name": "Dirty"
-            },
-            {
-              "value": "submit",
-              "name": "Submit"
-            }
-          ]
-        },
         "validation_messages": {
           "type": "text"
         }
@@ -430,7 +407,7 @@
       "name": "generic-card",
       "display_name": null,
       "created_at": "2022-06-11T21:03:20.057Z",
-      "updated_at": "2022-06-11T21:23:23.166Z",
+      "updated_at": "2022-06-13T09:51:58.456Z",
       "id": 2541320,
       "schema": {
         "image": {
@@ -461,6 +438,9 @@
         },
         "cta": {
           "type": "bloks"
+        },
+        "youtube_video_id": {
+          "type": "text"
         }
       },
       "image": null,
@@ -759,14 +739,29 @@
       "name": "teaser",
       "display_name": null,
       "created_at": "2022-05-24T14:41:57.685Z",
-      "updated_at": "2022-06-08T14:18:03.517Z",
+      "updated_at": "2022-06-13T11:14:10.969Z",
       "id": 2481325,
       "schema": {
         "heading": {
           "type": "text"
         },
-        "tagline": {
-          "type": "textarea"
+        "content": {
+          "type": "richtext",
+          "customize_toolbar": false,
+          "restrict_type": "",
+          "restrict_components": false,
+          "toolbar": [
+            "bold",
+            "italic",
+            "strike",
+            "inlinecode",
+            "paragraph",
+            "list",
+            "olist"
+          ]
+        },
+        "centered": {
+          "type": "boolean"
         }
       },
       "image": null,
