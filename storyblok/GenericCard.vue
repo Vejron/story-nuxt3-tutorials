@@ -1,7 +1,8 @@
 <template>
   <div
     v-editable="blok"
-    class="block flex flex-col h-full bg-white rounded-md shadow-lg overflow-hidden"
+    class="block flex flex-col h-full"
+    :class="{'bg-white rounded-md shadow-lg overflow-hidden': !blok.flat}"
   >
     <div class="h-56 sm:h-72 relative overflow-hidden">
       <VideoTube v-if="blok?.youtube_video_id" :blok="{youtube_video_id: blok.youtube_video_id}" />
@@ -12,15 +13,16 @@
         params="400x0"
       />
     </div>
-    <div class="flex flex-col flex-grow">
+    <div class="flex flex-col flex-grow" :class="{'px-4': !blok.flat}">
       <Component
-        class="px-4 py-2 my-2 font-semibold text-xl"
+        v-if="blok.heading"
+        class="mt-4 font-semibold text-xl"
         :is="blok.level ?? 'h1'"
         >{{ blok.heading }}</Component
       >
-      <p class="line-clamp px-4" v-if="blok.paragraph">{{ blok.paragraph }}</p>
+      <p class="line-clamp my-4" v-if="blok.paragraph">{{ blok.paragraph }}</p>
       <div class="flex-grow"></div>
-      <div class="p-4 flex w-full font-semibold gap-8">
+      <div v-if="blok?.cta?.length" class="py-4 flex w-full font-semibold gap-8">
         <Component v-for="cta in blok.cta" :is="cta.component" :blok="cta" />
       </div>
     </div>
