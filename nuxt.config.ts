@@ -3,6 +3,12 @@ import fs from "fs";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  ssr: true,
+  nitro: {
+    prerender: {
+      crawlLinks: true
+    }
+  },
   vite: {
     server: {
       https: {
@@ -15,7 +21,7 @@ export default defineNuxtConfig({
     },
   },
   build: {
-    transpile: ["@marvr/storyblok-rich-text-vue-renderer"],
+    transpile: ["@marvr/storyblok-rich-text-vue-renderer", "@headlessui/vue"],
   },
   modules: ["@unocss/nuxt", "@vueuse/nuxt", '@formkit/nuxt',],
   buildModules: [

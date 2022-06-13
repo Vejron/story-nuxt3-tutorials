@@ -3,7 +3,7 @@
     :is="is"
     :to="href"
     v-editable="blok"
-    class="p-4 group flex items-center sm:flex-col"
+    class="group flex items-center sm:flex-col"
   >
     <StoryImage
       class="h-20 w-20 mr-4 sm:mr-0"
