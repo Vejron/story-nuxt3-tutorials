@@ -1,0 +1,173 @@
+{
+  "presets": [
+    {
+      "id": 1550156,
+      "name": "reklam blaffa",
+      "preset": {
+        "_uid": "5bb343e2-e0a1-4cd7-bb29-e76a14d82cce",
+        "columns": [
+          {
+            "_uid": "eadb97f3-df59-4d31-b44e-f49149c74f88",
+            "link": {
+              "id": "",
+              "url": "",
+              "linktype": "url",
+              "cached_url": ""
+            },
+            "image": {
+              "id": 5033220,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "filename": "https://a.storyblok.com/f/159194/x/3501958a82/service-dog.svg",
+              "copyright": "",
+              "fieldtype": "asset"
+            },
+            "level": "h3",
+            "heading": "Kundservice",
+            "component": "feature",
+            "paragraph": "Svar på dina frågor"
+          },
+          {
+            "_uid": "a1270703-b0e4-4d27-a6a8-1c6b9c51a001",
+            "link": {
+              "id": "",
+              "url": "https://driftinfo.umeaenergi.se/",
+              "linktype": "url",
+              "cached_url": "https://driftinfo.umeaenergi.se/"
+            },
+            "image": {
+              "id": 5038925,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "filename": "https://a.storyblok.com/f/159194/x/bdc7f229ea/bulb.svg",
+              "copyright": "",
+              "fieldtype": "asset"
+            },
+            "level": "h3",
+            "heading": "Abrottsinformation",
+            "component": "feature",
+            "paragraph": "Se & anmäl avbrott"
+          },
+          {
+            "_uid": "dddbbddc-6d0e-4603-9d4c-a99b730ee805",
+            "link": {
+              "id": "ecfdc3ea-923f-44bb-8bdb-186a4aebd1d1",
+              "url": "",
+              "linktype": "story",
+              "cached_url": "articles/part-4-blog"
+            },
+            "image": {
+              "id": 5038931,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "filename": "https://a.storyblok.com/f/159194/x/77df5d2867/truck.svg",
+              "copyright": "",
+              "fieldtype": "asset"
+            },
+            "level": "h3",
+            "heading": "Flytta smidigt",
+            "component": "feature",
+            "paragraph": "Vi guidar dig"
+          }
+        ],
+        "component": "grid",
+        "full_width": false,
+        "background_color": {
+          "_uid": "fd9aab88-15f1-46cf-8668-28bcf6d79ad0",
+          "color": "#d9ead3",
+          "plugin": "official-colorpicker"
+        }
+      },
+      "component_id": 2481326,
+      "space_id": 159194,
+      "created_at": "2022-06-09T09:10:09.356Z",
+      "updated_at": "2022-06-09T09:10:09.356Z",
+      "image": "",
+      "color": "#2db47d",
+      "icon": "block-text-img-r-l",
+      "description": ""
+    },
+    {
+      "id": 1550155,
+      "name": "Topp hero",
+      "preset": {
+        "cta": [
+          {
+            "_uid": "ca5b96b5-79cb-4033-b353-2de53bf32a0a",
+            "link": {
+              "id": "",
+              "url": "https://www.umeaenergi.se/el/bli-kund",
+              "linktype": "url",
+              "cached_url": "https://www.umeaenergi.se/el/bli-kund"
+            },
+            "text": "Yes, bring me pain!",
+            "component": "cta-button"
+          }
+        ],
+        "_uid": "3e33f92c-ed21-42d9-8a1b-ce85f7b0c94d",
+        "image": {
+          "id": 4987615,
+          "alt": "",
+          "name": "",
+          "focus": "",
+          "title": "",
+          "filename": "https://a.storyblok.com/f/159194/2560x1920/f9b94dc568/2560px-wasteland.jpg",
+          "copyright": "",
+          "fieldtype": "asset"
+        },
+        "level": "h2",
+        "height": "0",
+        "heading": "Experts at architecting problems. Trusted to deliver pain.",
+        "overlay": true,
+        "tagline": "We are an evil corporation specializing in making your life a miserable hell.",
+        "component": "hero"
+      },
+      "component_id": 2503963,
+      "space_id": 159194,
+      "created_at": "2022-06-09T09:08:22.023Z",
+      "updated_at": "2022-06-09T09:08:22.023Z",
+      "image": "//a.storyblok.com/f/159194/x/a283657032/truck.svg",
+      "color": "",
+      "icon": "",
+      "description": ""
+    },
+    {
+      "id": 1550117,
+      "name": "Variant 1",
+      "preset": {
+        "cta": [],
+        "_uid": "de067aec-5429-450a-a2c0-e54dd9c7159c",
+        "image": {
+          "id": 5007501,
+          "alt": "",
+          "name": "",
+          "focus": "",
+          "title": "",
+          "filename": "https://a.storyblok.com/f/159194/1000x653/a1842c9a8e/compass-and-map-1.jpg",
+          "copyright": "",
+          "fieldtype": "asset"
+        },
+        "level": "h2",
+        "height": "1",
+        "heading": "Vad får jag",
+        "overlay": true,
+        "tagline": "sdösdföädsfööädfsäölsdföädföädföäslöädsfsdföälsdf",
+        "component": "hero"
+      },
+      "component_id": 2503963,
+      "space_id": 159194,
+      "created_at": "2022-06-09T09:06:46.249Z",
+      "updated_at": "2022-06-09T09:06:46.249Z",
+      "image": "",
+      "color": "#ff6159",
+      "icon": "block-1-2block",
+      "description": "Mitt i sidan"
+    }
+  ]
+}

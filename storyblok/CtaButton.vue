@@ -3,11 +3,16 @@
     v-if="external"
     :href="props.blok.link?.url"
     v-editable="blok"
-    class="fancy"
+    :class="[blok.fancy ? 'fancy' : 'standard']"
+    target="_blank"
   >
     {{ blok.text }}
   </a>
-  <NuxtLink v-else :to="'/' + blok.link?.cached_url" class="fancy">
+  <NuxtLink
+    v-else
+    :to="'/' + blok.link?.cached_url"
+    :class="[blok.fancy ? 'fancy' : 'standard']"
+  >
     {{ blok.text }}
   </NuxtLink>
 </template>
@@ -58,4 +63,13 @@ const external = computed(() => !!props.blok.link?.url);
   width: 100%;
   transition: 800ms ease all;
 }
+
+.standard {
+    background: green;
+    font-weight: 600;
+    border-radius: 9999px;
+    font-size: 1.125rem;
+    padding: 0.8rem 1.5rem;
+    color: #fff;
+  } 
 </style>

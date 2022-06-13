@@ -28,7 +28,7 @@
         <rich-text-renderer :document="blok.content" />
       </div>
       <div
-        class="flex items-center gap-8 mt-2 sm:mt-4 sm:text-xl font-bold"
+        class="flex items-center gap-4 mt-2 sm:mt-4 sm:text-xl font-bold"
         :class="[blok.left ? 'justify-start' : 'justify-end']"
       >
         <Component v-for="cta in blok.cta" :is="cta.component" :blok="cta">

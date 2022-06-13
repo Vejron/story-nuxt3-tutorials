@@ -2,27 +2,26 @@
   <section
     v-editable="blok"
     :aria-labelledby="blok._uid"
-    class="full-width"
+    :class="{'article-full-width': blok.embedded}"
   >
-    <div class="bgthing"></div>
+  <div class="article-container">
+    <div class="prose text-base lg:text-lg mb-4">
+      <rich-text-renderer
+        v-if="blok.description"
+        :document="blok.description"
+      />
+    </div>
     <FormKit
       form-class=""
       type="form"
       v-model="formData"
+      :validation-visibility="blok.validation_visibility"
       :submit-label="blok.submit_label"
       @submit="submitHandler"
     >
-      <div class="prose text-base lg:text-lg mb-4">
-        <h2 :id="blok._uid">{{ blok.heading }}</h2>
-        <rich-text-renderer
-          v-if="blok.description"
-          :document="blok.description"
-        />
-      </div>
       <template v-for="input in blok.inputs">
         <FormKit
           v-if="input.component == 'form-input'"
-          
           :type="input.type"
           :label="input.label"
           :placeholder="input.placeholder"
@@ -43,6 +42,7 @@
         />
       </template>
     </FormKit>
+    </div>
   </section>
 </template>
 
@@ -81,19 +81,35 @@ const inner = (type: string) => {
       return "!border-gray-600 rounded-lg mb-1 focus-within:border-blue-500";
   }
   return "!border-2 !border-gray-600 rounded-lg mb-1 focus-within:border-blue-500";
-}
+};
 </script>
 
 <style lang="css" scoped>
+@media (min-width: 90ch) {
+  .article-full-width {
+    background: rgb(227 238 248);
+    width: calc(100vw - var(--scrollbar-width));
+    transform: translateX(
+      calc((75ch - calc(100vw - var(--scrollbar-width) + 1px)) / 2)
+    );
+  }
+  .article-full-width .article-container {
+    max-width: 75ch;
+    padding: 1rem 0;
+    margin: 2rem auto;
+  }
 
-.bgthing {
-
-}
-@media (min-width: 40em) {
-  .bgthing {
-    margin-left: calc(-100vw / 2 + 75ch / 2);
-    margin-right: calc(-100vw / 2 + 75ch / 2);
+  .article-full-width .article-container .prose :first-child {
+    margin-top: 0;
   }
 }
+</style>
 
+<style lang="css">
+  .formkit-actions .formkit-wrapper .formkit-input {
+    background: green;
+    font-weight: 600;
+    border-radius: 9999px;
+    font-size: 1.125rem;
+  } 
 </style>
