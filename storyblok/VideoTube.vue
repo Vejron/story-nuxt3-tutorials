@@ -21,7 +21,7 @@
     <button
       v-show="stop"
       @click="stop = false"
-      class="absolute text-green-400 h-25 w-25 transition-all transform hover:scale-110"
+      class="absolute text-green-600 h-25 w-25 transition-all transform hover:scale-110"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

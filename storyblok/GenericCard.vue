@@ -4,7 +4,9 @@
     class="block flex flex-col h-full bg-white rounded-md shadow-lg overflow-hidden"
   >
     <div class="h-56 sm:h-72 relative overflow-hidden">
+      <VideoTube v-if="blok?.youtube_video_id" :blok="{youtube_video_id: blok.youtube_video_id}" />
       <StoryImage
+        v-else
         class="absolute w-full h-full object-cover object-center"
         :image="blok.image"
         params="400x0"
