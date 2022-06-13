@@ -21,7 +21,7 @@ export default defineNuxtConfig({
     },
   },
   build: {
-    transpile: ["@marvr/storyblok-rich-text-vue-renderer"],
+    transpile: ["@marvr/storyblok-rich-text-vue-renderer", "@headlessui/vue"],
   },
   modules: ["@unocss/nuxt", "@vueuse/nuxt", '@formkit/nuxt',],
   buildModules: [
