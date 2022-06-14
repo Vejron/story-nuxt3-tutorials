@@ -12,7 +12,6 @@
       />
     </div>
     <FormKit
-      form-class=""
       type="form"
       v-model="formData"
       :validation-visibility="blok.validation_visibility"

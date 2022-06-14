@@ -1,5 +1,5 @@
 <template>
- <InternalArticleTeaser :blok="story" />
+ <InternalArticleTeaser v-editable="blok" :blok="story" />
 </template>
 
 <script setup lang="ts">
@@ -22,19 +22,4 @@ const { data: story } = await useAsyncData(path + props.blok._uid, async () => {
   });
   return data.story;
 });
-
-const to = computed(() =>
-  "/" + story.value?.full_slug
-);
-
-const publishedAt = useNiceDate(story.value?.created_at ?? Date.now());
 </script>
-
-<style scoped>
-.line-clamp {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-</style>
