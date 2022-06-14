@@ -29,7 +29,7 @@ export default defineNuxtConfig({
       "@storyblok/nuxt",
       {
         accessToken: process.env.NUXT_PUBLIC_STORYBLOK_API_TOKEN,
-        bridge: process.env.NODE_ENV !== "production",
+        bridge: true,//process.env.NODE_ENV !== "production",
         https: true,
       },
     ],
