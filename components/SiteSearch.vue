@@ -14,29 +14,34 @@
         />
       </svg>
     </PopoverButton>
-    <PopoverOverlay class="fixed inset-0 bg-black opacity-30" />
+    <PopoverOverlay class="fixed inset-0 bg-black opacity-50" />
 
     <PopoverPanel
       focus
       class="fixed inset-0 flex items-center pointer-events-none justify-center p-4"
     >
-      <div class="bg-white rounded-md p-4 shadow-xl pointer-events-auto">
+      <div class="bg-white rounded-md p-4 shadow-xl pointer-events-auto max-w-full w-96">
         <div>
           <label class="text-2xl font-semibold" for="searchbar"
             >Site wide search</label
           >
           <div class="mt-4 flex justify-start items-center relative">
             <input
-              class="leading-none text-left text-gray-600 px-4 py-3 w-full border rounded border-gray-300 outline-none"
+              class="leading-none text-left text-gray-600 px-4 py-3 w-full border rounded-t border-gray-300 outline-none"
               type="text"
               id="searchbar"
+              @input="inputChange"
+              v-model="searchTerm"
             />
+            <svg v-if="working" class="absolute right-3 pointer-events-none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><rect x="0" y="0" width="24" height="24" fill="none" stroke="none" /><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg>
             <svg
-              class="absolute right-3 z-10 cursor-pointer"
+              v-else
+              class="absolute right-3 pointer-events-none"
               width="24"
               height="24"
               viewBox="0 0 24 24"
               fill="none"
+              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -56,12 +61,20 @@
             </svg>
           </div>
         </div>
+        <div class="h-56 overflow-x-hidden overflow-y-scroll px-4 py-2 border-b border-l border-r rounded-b border-gray-300">
+          <ul v-if="results?.length">
+            <li class="truncate" v-for="hit in results">
+              <NuxtLink :to="'/' + hit.full_slug" class="py-2 transition hover:text-green-500">{{hit.name}}</NuxtLink>
+            </li>
+          </ul>
+          <span class="text-sm font-light" v-else>Inga resultat...</span>
+        </div>
       </div>
     </PopoverPanel>
   </Popover>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import {
   Popover,
   PopoverOverlay,
@@ -69,5 +82,35 @@ import {
   PopoverPanel,
 } from "@headlessui/vue";
 
-const searchbar = ref();
+const storyblokApi = useStoryblokApi();
+const searchTerm = ref('');
+const results = ref();
+const working = ref(false)
+
+const debouncedInputFn = useDebounceFn(async () => {
+  const term = searchTerm.value;
+  if (term?.length > 2) {
+    const { data: {stories} } = await storyblokApi.get("cdn/stories", {
+      version: "draft",
+      search_term: term,
+    });
+    results.value = stories;
+    working.value = false;
+  }
+}, 600);
+
+const inputChange = (e: InputEvent) => {
+  if(e.data) {
+    working.value = true;
+  }
+  debouncedInputFn();
+}
+
+// clear serch results when no term
+watch(searchTerm, (current, old) => {
+  if((current.length === 0) && old?.length ) {
+    results.value = [];
+    working.value = false;
+  }
+})
 </script>
