@@ -1,11 +1,14 @@
 <template>
   <img
-    v-if="props.image"
+    v-if="props?.image?.filename"
     :src="src"
     :alt="image?.alt"
     :width="width"
     :height="height"
   />
+  <div v-else class="h-full w-auto flex justify-center items-center bg-gray-200 overflow-hidden">
+    <span class="text-red-400 text-2xl font-bold transform rotate-45">NO-IMAGE</span>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -28,8 +31,6 @@ const src = computed(() => {
       return filename + "/m/" + props.params;
     }
     return filename;
-  } else {
-    return "https://picsum.photos/400";
   }
 });
 const width = computed(() => props.image?.filename?.split("/")[5].split("x")[0]);
