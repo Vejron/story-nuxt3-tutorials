@@ -5,7 +5,7 @@
     class="relative my-10 flex w-full flex-col sm:flex-row overflow-hidden"
   >
     <div
-      class="w-full min-w-[50%] flex flex-col h-56 sm:h-auto sm:min-h-md"
+      class="w-full min-w-[50%] flex flex-col h-56 sm:h-auto"
       :class="[blok.full_width_variant ? 'sm:absolute sm:h-full' : 'sm:w-1/2']"
     >
       <StoryImage
