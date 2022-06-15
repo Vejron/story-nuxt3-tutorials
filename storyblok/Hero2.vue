@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" class="relative mb-8 bg-orange-500" :style="bgStyle">
+  <div v-editable="blok" class="relative mb-8 bg-green-100" :style="bgStyle">
     <img
       class="h-full w-full object-cover"
       :style="bgStyle"
@@ -14,7 +14,7 @@
           blok.overlay,
       }"
     >
-    <div class="flex flex-col justify-between h-full bg-orange-500/40 px-8 p-6 backdrop-blur max-w-md transform translate-y-8">
+    <div class="flex flex-col justify-between h-full bg-orange-500/50 px-8 p-6 backdrop-blur max-w-md transform translate-y-8">
       <Component
         class="text-4xl sm:text-4xl md:text-5xl font-bold text-white"
         :is="blok.level ?? 'h1'"
