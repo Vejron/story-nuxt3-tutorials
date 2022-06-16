@@ -95,7 +95,7 @@ import {
 } from "@headlessui/vue";
 
 const route = useRoute();
-const router = useRouter();
+
 const validLangCodes = ["en", "fi"];
 const languages = [
   { name: "Swedish", lang: "sv" },

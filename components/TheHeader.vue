@@ -1,17 +1,18 @@
 <template>
-  <header class="w-full z-10">
+  <header class="w-full z-10 relative">
     <div
-      class="fixed bg-white w-full h-20 px-4 sm:px-6 flex transition transition-all duration-500"
+      class="bg-white w-full"
       :class="[arrivedState?.top? 'shadow-sm': 'shadow-xl' ]"
     >
-      <nav class="py-3 text-lg font-semibold sm:py-5 flex w-full items-center">
+      <TheAlertMessage/>
+      <nav class="py-4 px-4 block text-lg font-semibold flex w-full items-center">
         <NavItem :blok="navItem" v-for="navItem in story.content.navigational_items" />
         <div class="flex-grow"></div>
         <LanguageSwitch />
         <SiteSearch />
       </nav>
     </div>
-    <div class="h-20"></div>
+   
   </header>
 </template>
 
