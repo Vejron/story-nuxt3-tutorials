@@ -40,8 +40,12 @@ const props = defineProps({
     required: true,
   },
 });
-
-const to = computed(() => "/" + props.blok?.full_slug);
+const lang = useCurrentLang();
+const to = computed(() =>
+  lang.value.lang === "sv"
+    ? "/" + props.blok?.full_slug
+    : "/" + lang.value.lang + "/" + props.blok?.full_slug
+);
 
 const publishedAt = useNiceDate(props.blok?.created_at ?? Date.now());
 </script>
