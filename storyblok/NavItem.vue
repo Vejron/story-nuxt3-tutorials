@@ -22,7 +22,7 @@
   <NuxtLink
     v-else
     class="inline-block px-4 py-2 transition transition-colors underline underline-transparent hover:underline-red-600 focus:outline-none focus-visible:ring-3 focus-visible:ring-offset-1 focus-visible:ring-blue"
-    :to="'/' + blok.link?.story.full_slug"
+    :to="$normalize(blok.link)"
   >
     {{ blok.name }}
     

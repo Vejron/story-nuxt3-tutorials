@@ -29,7 +29,6 @@ const { data: story } = await useAsyncData(path, async () => {
     language: lang.value.lang,
     resolve_links: "url"
   });
-  console.log(data)
   return data.story;
 });
 

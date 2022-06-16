@@ -19,6 +19,7 @@ if (path === "cdn/stories/") {
 const { data: story } = await useAsyncData(path, async () => {
   const { data } = await storyblokApi.get(path, {
     version: "draft",
+    resolve_links: "url"
   });
   return data.story;
 });

@@ -10,7 +10,7 @@
   </a>
   <NuxtLink
     v-else
-    :to="'/' + blok.link?.cached_url"
+    :to="$normalize(blok.link)"
     :class="[blok.fancy ? 'fancy' : 'standard']"
   >
     {{ blok.text }}
