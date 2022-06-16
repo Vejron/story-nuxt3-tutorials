@@ -18,14 +18,18 @@
 
 <script setup lang="ts">
 import { useStoryblokApi } from "@storyblok/vue";
-
+// get the correct languge to fetch
+const lang = useCurrentLang()
 // fetch our global settings for the navigation menu
 const storyblokApi = useStoryblokApi();
 const path = "cdn/stories/_global-settings";
 const { data: story } = await useAsyncData(path, async () => {
   const { data } = await storyblokApi.get(path, {
     version: "draft",
+    language: lang.value.lang,
+    resolve_links: "url"
   });
+  console.log(data)
   return data.story;
 });
 

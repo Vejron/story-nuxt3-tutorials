@@ -9,7 +9,7 @@ import { useStoryblokApi } from "@storyblok/vue";
 import { RichTextRenderer } from "@marvr/storyblok-rich-text-vue-renderer";
 
 // get the correct languge to fetch
-const lang = useCurrentLang()
+const lang = useCurrentLang();
 // fetch our global settings for the navigation menu
 const storyblokApi = useStoryblokApi();
 const path = "cdn/stories";

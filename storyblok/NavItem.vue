@@ -22,9 +22,10 @@
   <NuxtLink
     v-else
     class="inline-block px-4 py-2 transition transition-colors underline underline-transparent hover:underline-red-600 focus:outline-none focus-visible:ring-3 focus-visible:ring-offset-1 focus-visible:ring-blue"
-    :to="'/' + blok.link.cached_url"
+    :to="'/' + blok.link?.story.full_slug"
   >
     {{ blok.name }}
+    
   </NuxtLink>
 </template>
 
@@ -40,4 +41,5 @@ const props = defineProps({
 const isDropdown = computed(() => {
   return !!props.blok?.items?.length;
 });
+
 </script>
