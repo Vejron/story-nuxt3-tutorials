@@ -7,6 +7,7 @@
       <nav class="py-3 text-lg font-semibold sm:py-5 flex w-full items-center">
         <NavItem :blok="navItem" v-for="navItem in story.content.navigational_items" />
         <div class="flex-grow"></div>
+        <LanguageSwitch />
         <SiteSearch />
       </nav>
     </div>

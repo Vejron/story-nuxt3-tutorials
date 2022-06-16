@@ -8,7 +8,6 @@ const storyblokApi = useStoryblokApi();
 
 // construct the correct path to get the right story from storyblok
 const slug = route.params.slug;
-
 let path = `cdn/stories/${Array.isArray(slug) ? slug.join("/") : slug}`;
 // special case for root story as this should map to the home story
 if (path === "cdn/stories/") {
@@ -19,8 +18,8 @@ if (path === "cdn/stories/") {
 const { data: story } = await useAsyncData(path, async () => {
   const { data } = await storyblokApi.get(path, {
     version: "draft",
+    language: "en"
   });
-  console.log('HEJJJJJ_', data);
   return data.story;
 });
 
