@@ -91,7 +91,7 @@ const debouncedInputFn = useDebounceFn(async () => {
   const term = searchTerm.value;
   if (term?.length > 2) {
     const { data: {stories} } = await storyblokApi.get("cdn/stories", {
-      version: "draft",
+      version: useRuntimeConfig().public.storyblokPublished ? "published": "draft",
       search_term: term,
     });
     results.value = stories;

@@ -6,7 +6,7 @@
       >{{ blok.heading }}</Component
     >
     <div class="prose prose-slate text-lg max-w-xl" :class="{'sm:mx-auto': blok.centered}">
-      <rich-text-renderer :document="blok.content" />
+      <rich-text-renderer :document="blok?.content" />
     </div>
   </div>
 </template>

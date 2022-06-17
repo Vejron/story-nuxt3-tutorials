@@ -1,5 +1,5 @@
 <template>
- <InternalArticleTeaser v-editable="blok" :blok="story" />
+ <InternalArticleTeaser v-editable="blok" v-if="story" :blok="story" />
 </template>
 
 <script setup lang="ts">
@@ -17,7 +17,7 @@ const path = `cdn/stories/${props.blok.article}`;
 const { data: story } = await useAsyncData(path + props.blok._uid, async () => {
   // get specified article by uuid
   const { data } = await storyblokApi.get(path, {
-    version: "draft",
+    version: useRuntimeConfig().public.storyblokPublished ? "published": "draft",
     find_by: "uuid",
   });
   return data.story;

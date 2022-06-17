@@ -24,7 +24,7 @@ export default defineNuxtPlugin(() => {
         
         switch (link.linktype) {
           case "story":
-            return fromStoryUrl(link.story.url, lang.value.lang)
+            return fromStoryUrl(link.story?.url, lang.value.lang)
 
           default:
             return link.url;

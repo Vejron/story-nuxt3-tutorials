@@ -1,5 +1,5 @@
 <template>
-  <Component :is="story.content.component" :blok="story.content" :story="story" />
+  <Component :is="story?.content.component" :blok="story?.content" :story="story" />
 </template>
 
 <script lang="ts" setup>
@@ -18,7 +18,7 @@ if (path === "cdn/stories/") {
 // fetch the story before rendering the page ('usally at the server')
 const { data: story } = await useAsyncData(path, async () => {
   const { data } = await storyblokApi.get(path, {
-    version: "draft",
+    version: useRuntimeConfig().public.storyblokPublished ? "published": "draft",
     resolve_links: "url"
   });
   return data.story;

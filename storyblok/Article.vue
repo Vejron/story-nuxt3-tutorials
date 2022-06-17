@@ -16,8 +16,8 @@
           :image="blok.image"
           params="500x0"
         />
-        <RichTextRenderer :document="blok.intro" />
-        <RichTextRenderer :document="blok.content" />
+        <RichTextRenderer :document="blok?.intro" />
+        <RichTextRenderer :document="blok?.content" />
       </article>
     </div>
   </div>

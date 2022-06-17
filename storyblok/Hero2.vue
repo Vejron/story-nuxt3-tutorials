@@ -22,7 +22,7 @@
       >
 
       <div class="prose prose-black text-lg flex-shrink">
-        <rich-text-renderer :document="blok.content" />
+        <rich-text-renderer :document="blok?.content" />
       </div>
       <div class="flex justify-start gap-8 mt-2 sm:mt-4 sm:text-xl font-bold">
         <Component v-for="cta in blok.cta" :is="cta.component" :blok="cta">

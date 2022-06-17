@@ -7,7 +7,6 @@
 <script setup lang="ts">
 import { useStoryblokApi } from "@storyblok/vue";
 import { RichTextRenderer } from "@marvr/storyblok-rich-text-vue-renderer";
-
 // get the correct languge to fetch
 const lang = useCurrentLang();
 // fetch our global settings for the navigation menu
@@ -15,7 +14,7 @@ const storyblokApi = useStoryblokApi();
 const path = "cdn/stories";
 const { data: alertStory } = await useAsyncData(path, async () => {
   const { data } = await storyblokApi.get(path, {
-    version: "draft",
+    version: useRuntimeConfig().public.storyblokPublished ? "published": "draft",
     language: lang.value.lang,
     starts_with: "_alert-messages/"
   });

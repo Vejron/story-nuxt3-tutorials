@@ -15,6 +15,12 @@ export default defineNuxtConfig({
       },
     },
   },
+  runtimeConfig: {
+    apiSecret: '',
+    public: {
+      storyblokPublished: false,
+    }
+  },
   build: {
     transpile: ["@marvr/storyblok-rich-text-vue-renderer", "@headlessui/vue"],
   },

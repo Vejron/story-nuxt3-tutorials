@@ -13,7 +13,7 @@
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 place-content-stretch"
       >
         <li v-for="(article, index) in articles" :key="article._uid">
-          <InternalArticleTeaser v-if="article.content" :blok="article" />
+          <InternalArticleTeaser v-if="article?.content" :blok="article" />
         </li>
       </ul>
     </div>
@@ -39,7 +39,7 @@ const { data: articles } = await useAsyncData(
     if (props.blok.articles.length) {
       const { data } = await storyblokApi.get("cdn/stories/", {
         by_uuids_ordered: props.blok.articles.join(","),
-        version: "draft",
+        version: useRuntimeConfig().public.storyblokPublished ? "published": "draft",
       });
       return data.stories;
     }
