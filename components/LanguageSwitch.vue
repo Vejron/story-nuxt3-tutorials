@@ -39,7 +39,7 @@
         >
           <li
             :class="[
-              active ? 'bg-amber-100 text-amber-900' : 'text-gray-900',
+              active ? 'bg-orange-100 text-orange-700' : 'text-green-500',
               'relative cursor-default select-none py-2 pl-10 pr-4',
             ]"
           >
@@ -52,7 +52,7 @@
             >
             <span
               v-if="selected"
-              class="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"
+              class="absolute inset-y-0 left-0 flex items-center pl-3 text-orange-600"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

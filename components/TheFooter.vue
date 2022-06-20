@@ -3,7 +3,7 @@
     <div
       tabindex="0"
       aria-label="footer"
-      class="focus:outline-none w-full bg-indigo-700 py-12"
+      class="focus:outline-none w-full bg-primary py-12"
     >
       <div
         class="container mx-auto xl:flex text-center xl:text-left lg:text-left"

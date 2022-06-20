@@ -21,10 +21,10 @@
       class="flex flex-col justify-center py-8 sm:min-h-md"
       :class="[blok.left ? 'sm:pr-8' : 'sm:pl-8', blok.full_width_variant ? 'relative sm:px-8 sm:w-2/5 sm:bg-white/60 backdrop-blur-sm' : '']"
     >
-      <h2 class="text-3xl sm:text-5xl font-bold text-green-800">
+      <h2 class="text-3xl sm:text-5xl mb-4 font-bold text-green-800">
         {{ blok.heading }}
       </h2>
-      <div class="prose prose-black text-lg">
+      <div class="prose prose-black prose-lg py-4">
         <rich-text-renderer :document="blok.content" />
       </div>
       <div

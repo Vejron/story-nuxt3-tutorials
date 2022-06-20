@@ -1,7 +1,7 @@
 <template>
   <header class="w-full z-10 relative">
     <div
-      class="bg-white w-full"
+      class="bg-white w-full transition-all duration-500"
       :class="[arrivedState?.top? 'shadow-sm': 'shadow-xl' ]"
     >
       <TheAlertMessage/>

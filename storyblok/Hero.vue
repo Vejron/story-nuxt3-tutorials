@@ -10,7 +10,7 @@
     <div
       class="p-8 absolute inset-0 flex flex-col justify-center items-center text-center text-white"
       :class="{
-        'bg bg-gradient-to-t from-black/20 via-black/50 to-transparent':
+        'bg bg-gradient-to-t from-gray-700/20 via-gray-700/50 to-transparent':
           blok.overlay,
       }"
     >

@@ -1,7 +1,7 @@
 <template>
   <Popover class="relative" v-if="isDropdown" v-slot="{ open }">
     <PopoverButton
-      class="px-4 py-2 flex items-center focus:outline-none focus-visible:ring-3 focus-visible:ring-offset-1 focus-visible:ring-blue"
+      class="px-4 py-2 font-semibold flex items-center focus:outline-none focus-visible:ring-3 focus-visible:ring-offset-1 focus-visible:ring-blue"
     >
       {{ blok.name }}
       <svg class="ml-2 mt-1" width="8" height="6" viewBox="0 0 8 6">

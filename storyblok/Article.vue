@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-drop sm:py-10">
+  <div class=" sm:py-10">
     <div class="sm:p-8 p-4 bg-white mx-auto" style="max-width: fit-content">
       <article
         class="text-sm sm:text-base lg:text-lg max-w-[75ch] prose prose-slate"
@@ -39,8 +39,5 @@ const publishedAt = useNiceDate(props.story?.created_at ?? Date.now());
 </script>
 
 <style lang="css" scoped>
-.bg-drop {
-  background-attachment: fixed;
-  background-image: url("data:image/svg+xml;utf8,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='40' height='40' patternTransform='scale(3) rotate(45)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0,0%,100%,1)'/><path d='M15 22h10m-10-4h10M35 2h10M35 38h10m-50 0H5M-5 2H5'  stroke-linecap='square' stroke-width='0.5' stroke='hsla(258.5,59.4%,59.4%,1)' fill='none'/><path d='M18-5V5m4-10V5m16 10v10M18 35v10m4-10v10M2 15v10'  stroke-linecap='square' stroke-width='0.5' stroke='hsla(339.6,82.2%,51.6%,1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
-}
+
 </style>

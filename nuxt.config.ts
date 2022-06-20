@@ -24,36 +24,18 @@ export default defineNuxtConfig({
   build: {
     transpile: ["@marvr/storyblok-rich-text-vue-renderer", "@headlessui/vue"],
   },
-  modules: ["@unocss/nuxt", "@vueuse/nuxt", '@formkit/nuxt',],
+  modules: ['nuxt-windicss', "@vueuse/nuxt", '@formkit/nuxt',],
   buildModules: [
     [
       "@storyblok/nuxt",
       {
         accessToken: process.env.NUXT_PUBLIC_STORYBLOK_API_TOKEN,
-        bridge: true, //process.env.NODE_ENV !== "production",
+        bridge: !process.env.NUXT_PUBLIC_STORYBLOK_PUBLISHED,
         https: true,
       },
     ],
   ],
-  css: ["@unocss/reset/tailwind.css"],
-  unocss: {
-    typography: {
-      cssExtend: {
-        code: {
-          color: "#8b5cf6",
-        },
-        ".prose pre": {
-          border: "2px solid red",
-          "background-color": "black",
-          color: "white",
-        },
-        "a:hover": {
-          color: "#f43f5e",
-        },
-        "a:visited": {
-          color: "#14b8a6",
-        },
-      },
-    },
+  windicss: {
+    analyze: true
   },
 });

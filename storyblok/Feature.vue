@@ -7,7 +7,7 @@
   >
     <StoryImage
       class="h-20 w-20 mr-4 sm:mr-0"
-      :class="{ 'group-hover:animate-rubber-band': isLink }"
+      :class="{ 'group-hover:animate-rubberBand animated': isLink }"
       :image="blok.image"
     />
     <div

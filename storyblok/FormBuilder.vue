@@ -73,13 +73,15 @@ const submitHandler = async () => {
 };
 
 const inner = (type: string) => {
+  const same = "!border-gray-600 rounded-lg mb-1"
   switch (type) {
     case "radio":
-      return "!border-gray-600 rounded-lg mb-1 focus-within:border-blue-500";
     case "checkbox":
-      return "!border-gray-600 rounded-lg mb-1 focus-within:border-blue-500";
+      return same;
+    case "select":
+      return same + " !after:hidden";
   }
-  return "!border-2 !border-gray-600 rounded-lg mb-1 focus-within:border-blue-500";
+  //return same + " !border-2";
 };
 </script>
 

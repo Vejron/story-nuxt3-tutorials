@@ -4,6 +4,6 @@
     <main>
       <slot />
     </main>
-    <TheFooter />
+    <TheFooter class="mt-auto" />
   </div>
 </template>

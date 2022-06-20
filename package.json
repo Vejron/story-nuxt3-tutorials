@@ -7,8 +7,9 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@unocss/nuxt": "^0.34.1",
-    "nuxt": "3.0.0-rc.3"
+    "@windicss/plugin-animations": "^1.0.9",
+    "nuxt": "3.0.0-rc.4",
+    "nuxt-windicss": "^2.4.2"
   },
   "dependencies": {
     "@formkit/nuxt": "^1.0.0-beta.8",
@@ -16,6 +17,7 @@
     "@headlessui/vue": "^1.6.4",
     "@marvr/storyblok-rich-text-vue-renderer": "^3.2.1",
     "@storyblok/nuxt": "^4.0.1",
+    "@vejron/ue-design": "^0.2.40",
     "@vueuse/nuxt": "^8.5.0",
     "axios": "^0.27.2"
   }
