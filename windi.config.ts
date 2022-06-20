@@ -11,8 +11,8 @@ export default defineConfig({
     extend: {
       ...theme.extend,
       fontFamily: {
-        //sans: ["RalewayVariable", "ui-sans-serif", "system-ui"],
-        sans: ["ui-sans-serif","system-ui","-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","Noto" ]
+        sans: ["RalewayVariable", "ui-sans-serif", "system-ui"],
+        //sans: ["ui-sans-serif","system-ui","-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","Noto" ]
       },
       boxShadow: {
         black: "0.25rem 0.25rem 10px 1px #264b0066",
