@@ -7,6 +7,7 @@ import StoryImage from "~/components/StoryImage.vue";
 import VideoTube from "~/storyblok/VideoTube.vue";
 import { NodeTypes } from "@marvr/storyblok-rich-text-types";
 import FormBuilder from "~/storyblok/FormBuilder.vue";
+import { ArticleTeaser } from "~~/.nuxt/components";
 
 export default defineNuxtPlugin(({ vueApp }) => {
   vueApp.use(
@@ -20,9 +21,13 @@ export default defineNuxtPlugin(({ vueApp }) => {
         components: {
           "video-tube": ({ fields }) =>
             h(VideoTube, {
-              blok: { youtube_video_id: fields.youtube_video_id },
+              blok: { ...fields },
             }),
-            "form-builder": ({ fields }) =>
+          "article-teaser": ({ fields }) =>
+            h(ArticleTeaser, {
+              blok: { ...fields, embedded: true },
+            }),
+          "form-builder": ({ fields }) =>
             h(FormBuilder, { blok: { ...fields, embedded: true } }),
         },
       }),

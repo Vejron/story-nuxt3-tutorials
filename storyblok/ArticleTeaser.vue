@@ -1,5 +1,5 @@
 <template>
- <InternalArticleTeaser v-editable="blok" v-if="story" :blok="story" />
+ <InternalArticleTeaser v-editable="blok" v-if="story" :blok="story" :embedded="blok.embedded" />
 </template>
 
 <script setup lang="ts">
