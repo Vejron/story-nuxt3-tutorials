@@ -112,5 +112,13 @@ const inner = (type: string) => {
     font-weight: 600;
     border-radius: 9999px;
     font-size: 1.125rem;
-  } 
+  }
+
+  .article-full-width .article-container li {
+    padding-left: 0;
+  }
+
+  .article-full-width .article-container li::before {
+    content: none;
+  }
 </style>
