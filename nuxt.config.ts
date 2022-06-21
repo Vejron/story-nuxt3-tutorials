@@ -36,6 +36,7 @@ export default defineNuxtConfig({
     ],
   ],
   css: [
+    '@/assets/global.css',
     '@/assets/fonts.css',
   ],
   windicss: {

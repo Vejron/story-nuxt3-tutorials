@@ -8,7 +8,7 @@
       <ListboxButton
         class="px-4 py-2 flex items-center focus:outline-none focus-visible:ring-3 focus-visible:ring-offset-1 focus-visible:ring-blue"
       >
-        Lang {{ selectedLanguage.name }}
+       {{ selectedLanguage.name }}
         <svg
           aria-hidden="true"
           class="ml-2 mt-1"

@@ -14,10 +14,29 @@
         />
       </svg>
     </PopoverButton>
-    <PopoverOverlay class="fixed inset-0 bg-black opacity-50" />
+    <TransitionRoot :show="open">
+      <TransitionChild
+        enter="transition-opacity duration-300"
+        enter-from="opacity-0"
+        enter-to="opacity-100"
+        leave="transition-opacity duration-300"
+        leave-from="opacity-100"
+        leave-to="opacity-0"
+      >
+        <PopoverOverlay class="fixed inset-0 bg-black opacity-50" />
+      </TransitionChild>
 
+    <TransitionChild
+        enter="transition-opacity duration-500"
+        enter-from="opacity-0"
+        enter-to="opacity-100"
+        leave="transition-opacity duration-300"
+        leave-from="opacity-100"
+        leave-to="opacity-0"
+      >
     <PopoverPanel
       focus
+      v-slot="{ close }"
       class="fixed inset-0 flex items-center pointer-events-none justify-center p-4"
     >
       <div class="bg-white rounded-md p-4 shadow-xl pointer-events-auto max-w-full w-96">
@@ -64,13 +83,15 @@
         <div class="h-56 overflow-x-hidden overflow-y-scroll px-4 py-2 border-b border-l border-r rounded-b border-gray-300">
           <ul v-if="results?.length">
             <li class="truncate" v-for="hit in results">
-              <NuxtLink :to="'/' + hit.full_slug" class="py-2 transition hover:text-green-500">{{hit.name}}</NuxtLink>
+              <NuxtLink @click="close" :to="'/' + hit.full_slug" class="py-2 transition hover:text-green-500">{{hit.name}}</NuxtLink>
             </li>
           </ul>
           <span class="text-sm font-light" v-else>Inga resultat...</span>
         </div>
       </div>
     </PopoverPanel>
+    </TransitionChild>
+    </TransitionRoot>
   </Popover>
 </template>
 
@@ -80,6 +101,8 @@ import {
   PopoverOverlay,
   PopoverButton,
   PopoverPanel,
+  TransitionRoot,
+  TransitionChild
 } from "@headlessui/vue";
 
 const storyblokApi = useStoryblokApi();

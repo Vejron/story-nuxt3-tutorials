@@ -6,10 +6,15 @@
     >
       <TheAlertMessage/>
       <nav class="py-4 px-4 block text-lg font-semibold flex w-full items-center">
-        <NavItem :blok="navItem" v-for="navItem in story?.content.navigational_items" />
+        <TheBurger :items="story?.content.navigational_items" class="sm:hidden" />
+        <div class="hidden sm:flex">
+          <NavItem :blok="navItem" v-for="navItem in story?.content.navigational_items" />
+        </div>
+        
         <div class="flex-grow"></div>
         <LanguageSwitch />
         <SiteSearch />
+        
       </nav>
     </div>
    

@@ -14,7 +14,7 @@
     >
       <ul class="whitespace-nowrap">
         <li @click="close" v-for="navItem in blok.items">
-          <Component :is="navItem.component" :blok="navItem"> </Component>
+          <Component @click="close" :is="navItem.component" :blok="navItem"> </Component>
         </li>
       </ul>
     </PopoverPanel>
